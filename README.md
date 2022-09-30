@@ -52,9 +52,9 @@ slack:
   # Webhook address. Typically starts with https://hooks.slack.com/services/...
   webhook: '<Your Slack Webhook>'
   # Username displayed in Slack
-  username: PhishBot
+  bot_username: PhishBot
   # Channel to post in
-  channel: '#testing2'
+  bot_channel: '#testing2'
   # Bot profile picture
   emoji: ':blowfish:'
   # (Optional) Disable email, username, and credentials from being sent to Slack
