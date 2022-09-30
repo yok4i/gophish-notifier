@@ -5,6 +5,11 @@ has been updated. It supports both Slack and Email notification profiles by
 default, but it's very extensible so new notification profiles can be added
 easily.
 
+## Note
+
+This fork is intended to be compatible with a modified version (IOCs removed) of GoPhish available at [evilgophish](https://github.com/fin3ss3g0d/evilgophish).
+
+If you are using vanilla GoPhish, revert the signature header to `X-Gophish-Signature` in [main.go](main.go).
 
 ## Installation
 
