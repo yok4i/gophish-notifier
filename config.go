@@ -22,6 +22,16 @@ Email Address - {{ .Email }}
 IP Address - {{ .Address }}
 User Agent - {{ .UserAgent }}`
 
+var defaultEmailSMSOpenedTemplate =  `Email ID - {{ .ID }}
+Email Address - {{ .Email }}
+IP Address - {{ .Address }}
+User Agent - {{ .UserAgent }}`
+
+var defaultCapturedSessionTemplate = `Email ID - {{ .ID }}
+Email Address - {{ .Email }}
+IP Address - {{ .Address }}
+User Agent - {{ .UserAgent }}`
+
 func init() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
@@ -48,6 +58,8 @@ func setDefaults() {
 	viper.SetDefault("email_send_click_template", defaultClickedTemplate)
 	viper.SetDefault("email_submitted_credentials_template", defaultSubmittedCredentailsTemplate)
 	viper.SetDefault("email_default_email_open_template", defaultEmailOpenedTemplate)
+	viper.SetDefault("email_email_sms_opened_template", defaultEmailSMSOpenedTemplate)
+	viper.SetDefault("email_captured_session_template", defaultCapturedSessionTemplate)
 	viper.SetDefault("profiles", []string{"slack"})
 }
 

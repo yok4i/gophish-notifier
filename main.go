@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	errNoSignature      = errors.New("header X-Gophish-Signature not provided")
+	errNoSignature      = errors.New("header X-Signature not provided")
 	errInvalidSignature = errors.New("invalid signature")
 )
 
@@ -25,7 +25,7 @@ func validateSignature(body []byte, r *http.Request) error {
 	mac.Write(body)
 	expected := hex.EncodeToString(mac.Sum(nil))
 	var actual string
-	if _, err := fmt.Sscanf(r.Header.Get("X-Gophish-Signature"), "sha256=%s", &actual); err != nil {
+	if _, err := fmt.Sscanf(r.Header.Get("X-Signature"), "sha256=%s", &actual); err != nil {
 		return errNoSignature
 	}
 	if !hmac.Equal([]byte(expected), []byte(actual)) {
